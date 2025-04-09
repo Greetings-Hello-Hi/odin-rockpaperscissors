@@ -15,5 +15,11 @@ function getComputerChoice(RandomInt) {
     }
 }
 let ComputerChoice = getComputerChoice(RandomInt);
+// The humanInput function prompts for input from the human player.
+let humanInput = window.prompt("Rock, paper, or scissors?");
+// The getHumanChoice functions standardizes the human player's input to lowercase.
+function getHumanChoice() {
+    return humanInput.toLowerCase();    
+}
+let HumanChoice = getHumanChoice();
 // We can then pit ComputerChoice against HumanChoice.
-
