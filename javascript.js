@@ -1,3 +1,7 @@
+// The variables humanScore and computerScore keep track of the players' scores.
+let humanScore = 0;
+let computerScore = 0;
+
 // The randomInteger function helps randomize the computer choice, returning an integer from 0–8.
 function randomInteger() {
     return Math.floor(Math.random() * 9);
