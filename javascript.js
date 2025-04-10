@@ -6,7 +6,7 @@ let computerScore = 0;
 function randomInteger() {
     return Math.floor(Math.random() * 9);
 }
-let randomInt = randomInteger();
+const randomInt = randomInteger();
 
 // The getComputerChoice function converts the random integer into rock, paper, or scissors.
 // 0–2 is rock, 3–5 is paper, and 6–8 is scissors.
@@ -19,10 +19,10 @@ function getComputerChoice(randomInt) {
         return "scissors";
     }
 }
-let computerChoice = getComputerChoice(randomInt);
+const computerChoice = getComputerChoice(randomInt);
 
 // The humanInput function prompts for input from the human player.
-let humanInput = window.prompt("Rock, paper, or scissors?");
+const humanInput = window.prompt("Rock, paper, or scissors?");
 
 // The getHumanChoice functions standardizes the human player's input to lowercase.
 function getHumanChoice() {
@@ -32,5 +32,5 @@ function getHumanChoice() {
         return humanInput.toLowerCase();
     }
 }
-let humanChoice = getHumanChoice();
+const humanChoice = getHumanChoice();
 // We can then pit ComputerChoice against HumanChoice.
