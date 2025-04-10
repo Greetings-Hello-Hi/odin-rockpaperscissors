@@ -33,4 +33,37 @@ function getHumanChoice() {
     }
 }
 const humanChoice = getHumanChoice();
-// We can then pit ComputerChoice against HumanChoice.
+
+// We can then pit computerChoice against humanChoice using the playRound function.
+function playRound(human, computer) {
+    if (human == "rock" && computer == "scissors") {
+        console.log("You win! Rock beats Scissors.");
+        humanScore = ++humanScore;
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else if (human == "paper" && computer == "rock") {
+        console.log("You win! Paper beats Rock.");
+        humanScore = ++humanScore;
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else if (human == "scissors" && computer == "paper") {
+        console.log("You win! Scissors beats Paper.");
+        humanScore = ++humanScore;
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else if (human == "rock" && computer == "paper") {
+        console.log("You lose. Paper beats Rock.");
+        computerScore = ++computerScore;
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else if (human == "paper" && computer == "scissors") {
+        console.log("You lose. Scissors beats Paper.");
+        computerScore = ++computerScore;
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else if (human == "scissors" && computer == "rock") {
+        console.log("You lose. Rock beats Scissors.");
+        computerScore = ++computerScore;
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else {
+        console.log("It's a tie, so try again!");
+        console.log(`You:${humanScore}, Computer:${computerScore}`);
+    }
+}
+
+playRound(humanChoice, computerChoice);
