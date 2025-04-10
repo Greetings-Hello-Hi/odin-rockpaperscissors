@@ -27,7 +27,7 @@ const humanInput = window.prompt("Rock, paper, or scissors?");
 // The getHumanChoice functions standardizes the human player's input to lowercase.
 function getHumanChoice() {
     if (humanInput === null) {
-        return "Try again";
+        console.log("Try again!");
     } else {
         return humanInput.toLowerCase();
     }
@@ -60,9 +60,11 @@ function playRound(human, computer) {
         console.log("You lose. Rock beats Scissors.");
         computerScore = ++computerScore;
         console.log(`You:${humanScore}, Computer:${computerScore}`);
-    } else {
+    } else if (human == computer) {
         console.log("It's a tie, so try again!");
         console.log(`You:${humanScore}, Computer:${computerScore}`);
+    } else {
+        console.log("Invalid round.");
     }
 }
 
