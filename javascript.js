@@ -175,6 +175,18 @@ playGame(0);
 alert('The game has ended. Refresh the page to begin a new game!');
 */
 
+// The playGame function summons playRound for five rounds.
+// The variables humanScore and computerScore keep track of the players’ scores.
+// The totalRounds variable keeps track of the number of rounds (tied rounds don’t count as rounds here).
+// Within the playRound function, the randomInteger function helps randomize the computer choice, returning an integer from 0–8.
+// Within the playRound function, the getComputerChoice function converts the random integer into rock, paper, or scissors.
+// Within the playRound function, the humanInput function prompts for input from the human player.
+// Within the playRound function, the getHumanChoice functions standardizes the human player’s input to lowercase.
+// Within the rest of the playRound function, the computer’s choice is compared to the human’s choice.
+// Then, the winner of each round is determined and logged to the console. The winner’s score is incremented by 1.
+// If five scored rounds have been played, the playRound function compares the players’s scores and determines the winner of the entire game.
+// The playGame function uses a while loop to call playRound for five scored rounds.
+
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
@@ -193,8 +205,6 @@ function playGame() {
             let getHumanChoice = function(humanInput) {
                 if (humanInput === null) {
                     return "null";
-            //      console.log(`The game has ended because you hit “Cancel.” Try again!`);
-            //      return totalRounds = 6;
                 } else {
                     return humanInput.toLowerCase();
                 }
@@ -249,14 +259,15 @@ function playGame() {
             }
         };
     }
-        while (totalRounds <= 5) {
-            if (totalRounds > 5) {
-                break;
-            }
-            playRound();
-            totalRounds++;
+    while (totalRounds <= 5) {
+        if (totalRounds > 5) {
+            break;
         }
+        playRound();
+        totalRounds++;
+    }
 }
 
+// The below button function allows the human player to decide when to begin a new game.
 const btn = document.querySelector("button");
 btn.addEventListener("click", playGame);
