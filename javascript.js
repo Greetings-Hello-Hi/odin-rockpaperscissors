@@ -192,7 +192,9 @@ function playGame() {
             let humanInput = window.prompt("Rock, paper, or scissors?");
             let getHumanChoice = function(humanInput) {
                 if (humanInput === null) {
-                    console.log("Try again!");
+                    return "null";
+            //      console.log(`The game has ended because you hit “Cancel.” Try again!`);
+            //      return totalRounds = 6;
                 } else {
                     return humanInput.toLowerCase();
                 }
@@ -238,6 +240,9 @@ function playGame() {
                 console.log("It’s a tie, so try again!");
                 totalRounds = totalRounds - 1;
                 console.log(`You:${humanScore}, Computer:${computerScore}`);
+            } else if (getHumanChoice(humanInput) == "null") {
+                totalRounds = 6;
+                console.log(`The game ended because you hit “Cancel.” Try again!`);
             } else {
                 totalRounds = totalRounds - 1;
                 console.log("Invalid input.");
